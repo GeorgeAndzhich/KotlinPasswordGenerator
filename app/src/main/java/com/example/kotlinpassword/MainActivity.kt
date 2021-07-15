@@ -16,7 +16,13 @@ class MainActivity : AppCompatActivity() {
         val button = findViewById<Button>(R.id.button)
         button.setOnClickListener{
             //TODO Implement the algorithm
-            field.text = GeneratePassword(number.text.toString().toInt())
+            var PassLen = number.text.toString().toInt()
+            if (PassLen<=0 || PassLen >27){
+                Toast.makeText(this,"Invalid value, please insert valid length.",Toast.LENGTH_SHORT).show()
+            }
+            else {
+                field.text = GeneratePassword(PassLen)
+            }
         }
     }
 }
