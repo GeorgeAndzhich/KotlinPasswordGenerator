@@ -16,12 +16,12 @@ class MainActivity : AppCompatActivity() {
         val button = findViewById<Button>(R.id.button)
         button.setOnClickListener{
             //TODO Implement the algorithm
-            field.text = GeneratePassword(number.getText().toString().toInt())
+            field.text = GeneratePassword(number.text.toString().toInt())
         }
     }
 }
 
 fun GeneratePassword(length :Int):String{
-    var char = ('a'..'z') + ("A".."Z" ) + (0 .. 9)
+    var char = ('a'..'z') + ('A'..'Z' ) + (0 .. 9)
     return List(length) {char.random()}.joinToString(" ")
 }
